@@ -1,0 +1,71 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Scatter Plot: Humidity vs Precipitation (2025)",
+  "width": 600,
+  "height": 400,
+  "data": {
+    "url": "https://raw.githubusercontent.com/ChingLingChen/FIT3179-Visualization-2/refs/heads/main/Malaysia%20yeartodate.csv"
+  },
+  "params": [
+    {
+      "name": "selectedMonth",
+      "value": null,
+      "bind": {
+        "input": "select",
+        "options": [null, "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct"],
+        "labels": ["Show All", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct"]
+      }
+    }
+  ],
+  "transform": [
+    {
+      "calculate": "toDate(datum.datetime)",
+      "as": "date_obj"
+    },
+    {
+      "calculate": "timeFormat(datum.date_obj, '%b')",
+      "as": "Month"
+    },
+    {
+      "filter": "selectedMonth == null || datum.Month == selectedMonth"
+    }
+  ],
+  "mark": {
+    "type": "circle",
+    "tooltip": true,
+    "opacity": 0.7
+  },
+  "encoding": {
+    "x": {
+      "field": "precip",
+      "type": "quantitative",
+      "title": "Precipitation (in)"
+    },
+    "y": {
+      "field": "humidity",
+      "type": "quantitative",
+      "title": "Humidity (%)"
+    },
+    "size": {
+      "field": "windspeed",
+      "type": "quantitative",
+      "title": "Wind Speed (mph)",
+      "scale": { "range": [10, 100] }
+    },
+    "color": {
+      "field": "Month",
+      "type": "ordinal",
+      "scale": {
+        "domain": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct"],
+        "range": ["#aec7e8", "#ffbb78", "#98df8a", "#ff9896", "#c5b0d5", "#f7b6d2", "#c49c94", "#dbdb8d", "#9edae5", "#fdd0a2"]
+      }
+    },
+    "tooltip": [
+      { "field": "Month", "type": "ordinal" },
+      { "field": "precip", "type": "quantitative", "format": ".2f" },
+      { "field": "humidity", "type": "quantitative", "format": ".1f" },
+      { "field": "windspeed", "type": "quantitative", "format": ".1f" },
+      { "field": "uvindex", "type": "quantitative", "format": ".1f" }
+    ]
+  }
+}
