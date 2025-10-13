@@ -1,0 +1,82 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Malaysia Monthly Weather Metrics (2025)",
+  "width": 800,
+  "height": 400,
+  "data": {
+    "url": "https://raw.githubusercontent.com/ChingLingChen/FIT3179-Visualization-2/refs/heads/main/Malaysia%20yeartodate.csv"
+  },
+  "params": [
+    {
+      "name": "Metric",
+      "value": "precip",
+      "bind": {
+        "input": "select",
+        "options": ["precip", "humidity", "windspeed", "uvindex"],
+        "labels": [
+          "Precipitation (in)",
+          "Humidity (%)",
+          "Wind Speed (mph)",
+          "UV Index"
+        ]
+      }
+    }
+  ],
+  "transform": [
+    {
+      "calculate": "toDate(datum.datetime)",
+      "as": "date_obj"
+    },
+    {
+      "calculate": "timeFormat(datum.date_obj, '%b')",
+      "as": "Month"
+    },
+    {
+      "fold": ["precip", "humidity", "windspeed", "uvindex"],
+      "as": ["Metric", "value"]
+    },
+    {
+      "filter": "datum.Metric == Metric"
+    },
+    {
+      "aggregate": [
+        {
+          "op": "mean",
+          "field": "value",
+          "as": "Average value"
+        }
+      ],
+      "groupby": ["Month", "Metric"]
+    }
+  ],
+  "mark": {
+    "type": "line",
+    "point": true
+  },
+  "encoding": {
+    "x": {
+      "field": "Month",
+      "type": "ordinal",
+      "title": "Month",
+      "sort": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+    },
+    "y": {
+      "field": "Average value",
+      "type": "quantitative",
+      "title": "Average Value"
+    },
+    "color": {
+      "field": "Metric",
+      "type": "nominal",
+      "scale": {
+        "domain": ["precip", "humidity", "windspeed", "uvindex"],
+        "range": ["#6baed6", "#fdae6b", "#74c476", "#9e9ac8"]
+      },
+      "legend": null
+    },
+    "tooltip": [
+      { "field": "Month", "type": "ordinal" },
+      { "field": "Average value", "type": "quantitative", "format": ".2f" }
+    ]
+  }
+}
