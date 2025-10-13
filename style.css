@@ -50,6 +50,10 @@ h1 {
   width: 100%;
 }
 
+.center-align {
+  align-items: center;
+}
+
 .vis-block {
   flex: 2;
   min-width: 600px;
@@ -73,6 +77,26 @@ h1 {
 
 .hotter {
   color: #990000;
+  font-weight: bold;
+}
+
+.color-annotation span.precip {
+  color: #6baed6;
+  font-weight: bold;
+}
+
+.color-annotation span.humidity {
+  color: #fdae6b;
+  font-weight: bold;
+}
+
+.color-annotation span.windspeed {
+  color: #74c476;
+  font-weight: bold;
+}
+
+.color-annotation span.uvindex {
+  color: #9e9ac8;
   font-weight: bold;
 }
 
