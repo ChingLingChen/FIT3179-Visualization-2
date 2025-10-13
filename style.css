@@ -8,7 +8,7 @@ body {
 
 header {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 h1 {
@@ -17,25 +17,49 @@ h1 {
   margin-bottom: 10px;
 }
 
+.introduction {
+  font-size: 16px;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #555;
+}
+
 .dashboard {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center; 
-  gap: 40px;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.map-area {
+.map-section, .line-chart-section, .scatter-barchart-section {
+  margin-bottom: 40px;
+}
+
+h2 {
+  font-family: serif;
+  font-size: 28px;
+  margin-bottom: 15px;
+  color: #333;
+  text-align: center;
+}
+
+.map-layout, .line-chart-layout {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.map-area, .chart-area {
   flex: 2;
   max-width: 800px;
   min-width: 700px;
   overflow: hidden;
 }
 
-#map {
+#map, #metrics, #two {
   width: 100%;
+  height: 500px;
 }
 
 .annotation {
@@ -57,34 +81,23 @@ h1 {
 }
 
 @media screen and (max-width: 1000px) {
-  .dashboard {
+  .map-layout, .line-chart-layout {
     flex-direction: column;
     align-items: center;
   }
 
   .annotation {
     text-align: center;
-    margin-top: 30px;
-  }
-
-  .map-area {
+    margin-top: 20px;
     max-width: 100%;
   }
-}
 
-.second-chart {
-  max-width: 900px;
-  margin: 60px auto 0 auto;
-  text-align: center;
-}
+  .map-area, .chart-area {
+    max-width: 100%;
+  }
 
-.second-chart h2 {
-  font-size: 28px;
-  margin-bottom: 20px;
-  font-family: serif;
-  color: #333;
-}
-
-#precipitation {
-  width: 100%;
+  .introduction {
+    max-width: 100%;
+    padding: 0 20px;
+  }
 }
