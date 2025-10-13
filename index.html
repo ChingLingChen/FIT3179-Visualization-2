@@ -21,7 +21,7 @@
   <!-- Temperature Map Section -->
   <section class="section">
     <h2>Hourly Temperature by Malaysian State</h2>
-    <div class="content-block">
+    <div class="content-block center-align">
       <div id="map" class="vis-block"></div>
       <div class="annotation">
         <p>This map shows hourly temperature across Malaysian states. Use the dropdown menus to filter by year, month, day, and hour.</p>
@@ -36,9 +36,7 @@
   <section class="section">
     <h2>Weather Relationships and Monthly Averages (2025)</h2>
     <div class="content-block">
-      <div class="vis-block">
-        <div id="precipitation"></div>
-      </div>
+      <div id="precipitation" class="vis-block"></div>
       <div class="annotation">
         <p>This section shows the relationship between precipitation and humidity using a scatterplot, along with monthly averages for temperature, rainfall, humidity, and wind speed in bar charts.</p>
         <p>Use this section to compare how different weather metrics vary across months and identify patterns or anomalies.</p>
@@ -49,10 +47,16 @@
   <!-- Line Chart Section -->
   <section class="section">
     <h2>Monthly Weather Metrics (2025)</h2>
-    <div class="content-block">
+    <div class="content-block center-align">
       <div id="metrics" class="vis-block"></div>
-      <div class="annotation">
-        <p>This line chart shows monthly trends for precipitation, humidity, wind speed, and UV index. Use it to compare seasonal variations and identify weather extremes.</p>
+      <div class="annotation color-annotation">
+        <p>This line chart illustrates the monthly average trends of 
+          <span class="precip">precipitation</span>, 
+          <span class="humidity">humidity</span>, 
+          <span class="windspeed">wind speed</span>, and 
+          <span class="uvindex">UV index</span> across Malaysia in 2025.
+        </p>
+        <p>Use the dropdown menu to select a specific metric, and hover over the lines to view detailed values.</p>
       </div>
     </div>
   </section>
