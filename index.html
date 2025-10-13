@@ -2,33 +2,53 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Malaysia Weather</title>
+  <title>Malaysia Weather Dashboard</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-  <script src="vega_lite_vis.js"></script>
+  <script src="vega_lite_vis.js" defer></script>
 </head>
 <body>
   <header>
-    <h1>Malaysia Weather</h1>
+    <h1>Malaysia Weather Dashboard</h1>
+    <div class="introduction">
+      <p>Welcome to the Malaysia Weather Dashboard for 2025! This interactive tool visualizes weather data across Malaysian states, including temperature, precipitation, humidity, wind speed, UV index, and more. Use the maps, charts, and filters to explore seasonal trends and plan accordingly for agriculture, travel, or daily activities. Data is sourced from local meteorological stations and enhanced with open-meteo datasets.</p>
+    </div>
   </header>
 
   <main class="dashboard">
-    <div class="map-area">
-      <div id="map"></div>
-    </div>
+    <section class="map-section">
+      <h2>Weather Map</h2>
+      <div class="map-layout">
+        <div class="map-area">
+          <div id="map"></div>
+        </div>
+        <div class="annotation">
+          <p>This map shows hourly temperature across Malaysian states. Use the dropdown menus to filter by year, month, day, and hour.</p>
+          <p>You can zoom and re-center the map using the controls. The color scale indicates temperature intensity from <span class="cooler">cooler</span> to <span class="hotter">hotter</span>.</p>
+        </div>
+      </div>
+    </section>
 
-    <div class="annotation">
-      <p>This map shows hourly temperature across Malaysian states. Use the dropdown menus to filter by year, month, day, and hour.</p>
-      <p>You can zoom and re-center the map using the controls. The color scale indicates temperature intensity from 
-        <span class="cooler">cooler</span> to <span class="hotter">hotter</span>.
-    </div>
+    <section class="line-chart-section">
+      <h2>Weather Metrics</h2>
+      <div class="line-chart-layout">
+        <div class="annotation">
+          <p>This line chart displays the monthly trends of precipitation, humidity, wind speed, and UV index in 2025. Hover over the lines to see detailed values and use the interactive features to analyze seasonal patterns.</p>
+        </div>
+        <div class="chart-area">
+          <div id="metrics"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="scatter-barchart-section">
+      <h2>Scatterplot and Barcharts</h2>
+      <div class="chart-area">
+        <div id="two"></div>
+      </div>
+    </section>
   </main>
-
-  <section class="second-chart">
-    <h2>Malaysia Precipitation</h2>
-    <div id="precipitation"></div>
-  </section>
 </body>
 </html>
