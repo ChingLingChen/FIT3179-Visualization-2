@@ -1,6 +1,5 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Malaysia Monthly Weather Metrics (2025)",
   "width": 700,
   "height": 400,
   "data": {
