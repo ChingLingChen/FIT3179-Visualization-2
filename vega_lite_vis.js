@@ -1,20 +1,14 @@
 var vg_1 = "map.json";
 vegaEmbed("#map", vg_1, { actions: false }).then(function(result) {
-  console.log("Map loaded");
-}).catch(function(error) {
-  console.error("Error loading map.json:", error);
-});
+  // Vega view instance available as result.view
+}).catch(console.error);
 
 var vg_2 = "metrics.json";
 vegaEmbed("#metrics", vg_2, { actions: false }).then(function(result) {
-  console.log("Metrics loaded");
-}).catch(function(error) {
-  console.error("Error loading metrics.json:", error);
-});
+  // Vega view instance available as result.view
+}).catch(console.error);
 
 var vg_3 = "two.json";
-vegaEmbed("#precipitation", vg_3, { actions: false }).then(function(result) {
-  console.log("Scatterplot and bar charts loaded");
-}).catch(function(error) {
-  console.error("Error loading two.json:", error);
-});
+vegaEmbed("#scatter-bar", vg_3, { actions: false }).then(function(result) {
+  // Vega view instance available as result.view
+}).catch(console.error);
