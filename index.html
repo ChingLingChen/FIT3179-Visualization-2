@@ -12,41 +12,37 @@
 <body>
   <header>
     <h1>Malaysia Weather Dashboard</h1>
-    <p class="intro">
-      This dashboard provides an overview of Malaysia's weather patterns using interactive charts and maps.
-      Explore precipitation, humidity, wind speed, UV index, and more across different months and regions.
-    </p>
+    <p>This dashboard provides insights into Malaysia's weather patterns, including temperature, precipitation, humidity, wind speed, and UV index. Explore the interactive charts and maps to analyze weather trends.</p>
   </header>
 
-  <!-- Temperature Map Section -->
-  <section class="section">
-    <h2>Malaysia Temperature Map</h2>
-    <div class="content-block">
-      <div id="map" class="vis-block"></div>
-      <div class="annotation">
-        <p>This map shows hourly temperature across Malaysian states. Use the dropdown menus to filter by year, month, day, and hour.</p>
-        <p>You can zoom and re-center the map using the controls. The color scale indicates temperature intensity from 
-          <span class="cooler">cooler</span> to <span class="hotter">hotter</span>.
-        </p>
+  <main class="dashboard">
+    <section class="map-section">
+      <h2>Malaysia Temperature Map</h2>
+      <div class="map-container">
+        <div id="map"></div>
+        <div class="annotation">
+          <p>This map shows hourly temperature across Malaysian states. Use the dropdown menus to filter by year, month, day, and hour.</p>
+          <p>You can zoom and re-center the map using the controls. The color scale indicates temperature intensity from 
+            <span class="cooler">cooler</span> to <span class="hotter">hotter</span>.
+          </p>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Line Chart Section -->
-  <section class="section">
-    <h2>Monthly Weather Metrics</h2>
-    <div class="content-block">
-      <div id="metrics" class="vis-block"></div>
-      <div class="annotation">
-        <p>This line chart shows monthly trends for precipitation, humidity, wind speed, and UV index. Use it to compare seasonal variations and identify weather extremes.</p>
+    <section class="line-chart-section">
+      <h2>Malaysia Weather Metrics</h2>
+      <div class="line-chart-container">
+        <div class="annotation">
+          <p>This line chart visualizes key weather metrics such as precipitation, humidity, wind speed, and UV index over time. Use the interactive features to explore trends and patterns.</p>
+        </div>
+        <div id="metrics"></div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Scatterplot + Bar Charts Section -->
-  <section class="section">
-    <h2>Weather Relationships and Monthly Averages</h2>
-    <div id="precipitation" class="vis-block"></div>
-  </section>
+    <section class="scatter-bar-section">
+      <h2>Scatterplot and Bar Charts</h2>
+      <div id="scatter-bar"></div>
+    </section>
+  </main>
 </body>
 </html>
