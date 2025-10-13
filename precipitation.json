@@ -1,0 +1,50 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Malaysia Monthly Precipitation (2025)",
+  "width": 800,
+  "height": 400,
+  "data": {
+    "url": "https://raw.githubusercontent.com/ChingLingChen/FIT3179-Homework-Week-10/refs/heads/main/Malaysia%20yeartodate.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "datetime": "date",
+        "precip": "number"
+      }
+    }
+  },
+  "transform": [
+    {
+      "calculate": "timeFormat(datum.datetime, '%Y-%m')",
+      "as": "month"
+    },
+    {
+      "aggregate": [
+        {"op": "mean", "field": "precip", "as": "avg_precip"}
+      ],
+      "groupby": ["month"]
+    }
+  ],
+  "mark": {
+    "type": "line",
+    "point": true,
+    "tooltip": true
+  },
+  "encoding": {
+    "x": {
+      "field": "month",
+      "type": "ordinal",
+      "title": "Month",
+      "axis": {"labelAngle": 0}
+    },
+    "y": {
+      "field": "avg_precip",
+      "type": "quantitative",
+      "title": "Average Precipitation (mm)"
+    },
+    "tooltip": [
+      {"field": "month", "type": "nominal", "title": "Month"},
+      {"field": "avg_precip", "type": "quantitative", "title": "Average Precipitation (mm)", "format": ".2f"}
+    ]
+  }
+}
