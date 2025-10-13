@@ -18,35 +18,35 @@
     </p>
   </header>
 
-  <!-- Map Section -->
-  <section class="dashboard">
-    <div class="map-area">
-      <h2>Malaysia Temperature Map</h2>
-      <div id="map"></div>
-    </div>
-    <div class="annotation">
-      <p>This map shows hourly temperature across Malaysian states. Use the dropdown menus to filter by year, month, day, and hour.</p>
-      <p>You can zoom and re-center the map using the controls. The color scale indicates temperature intensity from 
-        <span class="cooler">cooler</span> to <span class="hotter">hotter</span>.
-      </p>
+  <!-- Temperature Map Section -->
+  <section class="section">
+    <h2>Malaysia Temperature Map</h2>
+    <div class="content-block">
+      <div id="map" class="vis-block"></div>
+      <div class="annotation">
+        <p>This map shows hourly temperature across Malaysian states. Use the dropdown menus to filter by year, month, day, and hour.</p>
+        <p>You can zoom and re-center the map using the controls. The color scale indicates temperature intensity from 
+          <span class="cooler">cooler</span> to <span class="hotter">hotter</span>.
+        </p>
+      </div>
     </div>
   </section>
 
   <!-- Line Chart Section -->
-  <section class="dashboard reverse">
-    <div class="annotation">
-      <p>This line chart shows monthly trends for precipitation, humidity, wind speed, and UV index. Use it to compare seasonal variations and identify weather extremes.</p>
-    </div>
-    <div class="map-area">
-      <h2>Monthly Weather Metrics</h2>
-      <div id="metrics"></div>
+  <section class="section">
+    <h2>Monthly Weather Metrics</h2>
+    <div class="content-block reverse">
+      <div class="annotation">
+        <p>This line chart shows monthly trends for precipitation, humidity, wind speed, and UV index. Use it to compare seasonal variations and identify weather extremes.</p>
+      </div>
+      <div id="metrics" class="vis-block"></div>
     </div>
   </section>
 
   <!-- Scatterplot + Bar Charts Section -->
-  <section class="second-chart">
+  <section class="section">
     <h2>Weather Relationships and Monthly Averages</h2>
-    <div id="precipitation"></div>
+    <div id="precipitation" class="vis-block"></div>
   </section>
 </body>
 </html>
