@@ -1,12 +1,5 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": {
-    "text": "Hourly Temperature by Malaysian State",
-    "font": "serif",
-    "fontSize": 20,
-    "anchor": "middle",
-    "align": "center"
-  },
   "width": 600,
   "height": 500,
   "params": [
