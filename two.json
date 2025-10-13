@@ -1,0 +1,183 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/ChingLingChen/FIT3179-Visualization-2/refs/heads/main/Malaysia%20yeartodate.csv"
+  },
+  "hconcat": [
+    {
+      "width": 500,
+      "height": 500,
+      "title": "Precipitation vs Humidity",
+      "transform": [
+        {"calculate": "toDate(datum.datetime)", "as": "date_obj"},
+        {"calculate": "timeFormat(datum.date_obj, '%b')", "as": "Month"},
+        {"filter": "datum.precip > 0 && datum.humidity > 0"}
+      ],
+      "params": [
+        {
+          "name": "monthFilter",
+          "select": {"type": "point", "fields": ["Month"], "toggle": false, "clear": "dblclick"}
+        }
+      ],
+      "mark": {"type": "circle", "tooltip": true, "opacity": 0.7},
+      "encoding": {
+        "x": {"field": "precip", "type": "quantitative", "title": "Precipitation (in)"},
+        "y": {"field": "humidity", "type": "quantitative", "title": "Humidity (%)"},
+        "color": {
+          "field": "Month",
+          "type": "ordinal",
+          "scale": {
+            "domain": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct"],
+            "range": ["#aec7e8", "#ffbb78", "#a3bffa", "#ff9896", "#c5b0d5", "#f7b6d2", "#c49c94", "#b0b7f2", "#9edae5", "#fdd0a2"]
+          }
+        },
+        "size": {"field": "windspeed", "type": "quantitative", "title": "Wind Speed (mph)", "scale": {"range": [10, 100]}},
+        "opacity": {"condition": {"param": "monthFilter", "value": 0.9}, "value": 0.2}
+      }
+    },
+    {
+      "vconcat": [
+        {
+          "hconcat": [
+            {
+              "width": 300,
+              "height": 200,
+              "title": "Average Cloud Cover",
+              "transform": [
+                {"calculate": "timeFormat(toDate(datum.datetime), '%b')", "as": "Month"},
+                {"aggregate": [{"op": "mean", "field": "cloudcover", "as": "avg_cloudcover"}], "groupby": ["Month"]}
+              ],
+              "params": [
+                {
+                  "name": "monthFilter",
+                  "select": {"type": "point", "fields": ["Month"], "toggle": false, "clear": "dblclick"}
+                }
+              ],
+              "mark": {"type": "bar", "binSpacing": 0.5, "width": 15},
+              "encoding": {
+                "x": {"field": "Month", "type": "ordinal", "title": "Month", "sort": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct"]},
+                "y": {"field": "avg_cloudcover", "type": "quantitative", "title": "Average Cloud Cover"},
+                "color": {
+                  "field": "Month",
+                  "type": "ordinal",
+                  "scale": {
+                    "domain": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct"],
+                    "range": ["#aec7e8", "#ffbb78", "#a3bffa", "#ff9896", "#c5b0d5", "#f7b6d2", "#c49c94", "#b0b7f2", "#9edae5", "#fdd0a2"]
+                  }
+                },
+                "opacity": {"condition": {"param": "monthFilter", "value": 0.9}, "value": 0.2},
+                "tooltip": [
+                  {"field": "Month", "type": "ordinal", "title": "Month"},
+                  {"field": "avg_cloudcover", "type": "quantitative", "title": "Average Cloud Cover", "format": ".1f"}
+                ]
+              }
+            },
+            {
+              "width": 300,
+              "height": 200,
+              "title": "Average Solar Radiation",
+              "transform": [
+                {"calculate": "timeFormat(toDate(datum.datetime), '%b')", "as": "Month"},
+                {"aggregate": [{"op": "mean", "field": "solarradiation", "as": "avg_solarradiation"}], "groupby": ["Month"]}
+              ],
+              "params": [
+                {
+                  "name": "monthFilter",
+                  "select": {"type": "point", "fields": ["Month"], "toggle": false, "clear": "dblclick"}
+                }
+              ],
+              "mark": {"type": "bar", "binSpacing": 0.5, "width": 15},
+              "encoding": {
+                "x": {"field": "Month", "type": "ordinal", "title": "Month", "sort": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct"]},
+                "y": {"field": "avg_solarradiation", "type": "quantitative", "title": "Average Solar Radiation"},
+                "color": {
+                  "field": "Month",
+                  "type": "ordinal",
+                  "scale": {
+                    "domain": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct"],
+                    "range": ["#aec7e8", "#ffbb78", "#a3bffa", "#ff9896", "#c5b0d5", "#f7b6d2", "#c49c94", "#b0b7f2", "#9edae5", "#fdd0a2"]
+                  }
+                },
+                "opacity": {"condition": {"param": "monthFilter", "value": 0.9}, "value": 0.2},
+                "tooltip": [
+                  {"field": "Month", "type": "ordinal", "title": "Month"},
+                  {"field": "avg_solarradiation", "type": "quantitative", "title": "Average Solar Radiation", "format": ".1f"}
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "hconcat": [
+            {
+              "width": 300,
+              "height": 200,
+              "title": "Average Visibility",
+              "transform": [
+                {"calculate": "timeFormat(toDate(datum.datetime), '%b')", "as": "Month"},
+                {"aggregate": [{"op": "mean", "field": "visibility", "as": "avg_visibility"}], "groupby": ["Month"]}
+              ],
+              "params": [
+                {
+                  "name": "monthFilter",
+                  "select": {"type": "point", "fields": ["Month"], "toggle": false, "clear": "dblclick"}
+                }
+              ],
+              "mark": {"type": "bar", "binSpacing": 0.5, "width": 15},
+              "encoding": {
+                "x": {"field": "Month", "type": "ordinal", "title": "Month", "sort": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct"]},
+                "y": {"field": "avg_visibility", "type": "quantitative", "title": "Average Visibility"},
+                "color": {
+                  "field": "Month",
+                  "type": "ordinal",
+                  "scale": {
+                    "domain": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct"],
+                    "range": ["#aec7e8", "#ffbb78", "#a3bffa", "#ff9896", "#c5b0d5", "#f7b6d2", "#c49c94", "#b0b7f2", "#9edae5", "#fdd0a2"]
+                  }
+                },
+                "opacity": {"condition": {"param": "monthFilter", "value": 0.9}, "value": 0.2},
+                "tooltip": [
+                  {"field": "Month", "type": "ordinal", "title": "Month"},
+                  {"field": "avg_visibility", "type": "quantitative", "title": "Average Visibility", "format": ".1f"}
+                ]
+              }
+            },
+            {
+              "width": 300,
+              "height": 200,
+              "title": "Average Moonphase",
+              "transform": [
+                {"calculate": "timeFormat(toDate(datum.datetime), '%b')", "as": "Month"},
+                {"aggregate": [{"op": "mean", "field": "moonphase", "as": "avg_moonphase"}], "groupby": ["Month"]}
+              ],
+              "params": [
+                {
+                  "name": "monthFilter",
+                  "select": {"type": "point", "fields": ["Month"], "toggle": false, "clear": "dblclick"}
+                }
+              ],
+              "mark": {"type": "bar", "binSpacing": 0.5, "width": 15},
+              "encoding": {
+                "x": {"field": "Month", "type": "ordinal", "title": "Month", "sort": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct"]},
+                "y": {"field": "avg_moonphase", "type": "quantitative", "title": "Average Moonphase"},
+                "color": {
+                  "field": "Month",
+                  "type": "ordinal",
+                  "scale": {
+                    "domain": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct"],
+                    "range": ["#aec7e8", "#ffbb78", "#a3bffa", "#ff9896", "#c5b0d5", "#f7b6d2", "#c49c94", "#b0b7f2", "#9edae5", "#fdd0a2"]
+                  }
+                },
+                "opacity": {"condition": {"param": "monthFilter", "value": 0.9}, "value": 0.2},
+                "tooltip": [
+                  {"field": "Month", "type": "ordinal", "title": "Month"},
+                  {"field": "avg_moonphase", "type": "quantitative", "title": "Average Moonphase", "format": ".2f"}
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
