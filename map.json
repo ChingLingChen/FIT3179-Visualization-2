@@ -1,0 +1,136 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Hourly Temperature by Malaysian State",
+    "font": "serif",
+    "fontSize": 20,
+    "anchor": "middle",
+    "align": "center"
+  },
+  "width": 600,
+  "height": 500,
+  "params": [
+    {
+      "name": "year_month_select",
+      "bind": {
+        "input": "select",
+        "options": ["2024-10","2024-11","2024-12","2025-01","2025-02","2025-03","2025-04","2025-05","2025-06","2025-07","2025-08","2025-09","2025-10"],
+        "name": "Year-Month: "
+      },
+      "value": "2024-10"
+    },
+    {
+      "name": "day_select",
+      "bind": {
+        "input": "select",
+        "options": ["01","02","03","04","05","06","07","08","09","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31"],
+        "name": "Day: "
+      },
+      "value": "01"
+    },
+    {
+      "name": "hour_select",
+      "bind": {
+        "input": "select",
+        "options": ["00","01","02","03","04","05","06","07","08","09","10","11","12","13","14","15","16","17","18","19","20","21","22","23"],
+        "name": "Hour: "
+      },
+      "value": "00"
+    },
+    {
+      "name": "zoom_level",
+      "value": 1500,
+      "bind": {
+        "input": "range",
+        "min": 500,
+        "max": 3000,
+        "step": 100,
+        "name": "Zoom: "
+      }
+    },
+    {
+      "name": "center_to",
+      "value": [108, 4],
+      "bind": {
+        "input": "select",
+        "options": [
+          [108, 4],
+          [101.7, 3.1],
+          [110.3, 1.5]
+        ],
+        "labels": ["Malaysia", "Kuala Lumpur", "Sabah"],
+        "name": "Map Center: "
+      }
+    }
+  ],
+  "layer": [
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/7_others/oceans.topojson",
+        "format": { "type": "topojson", "feature": "oceans" }
+      },
+      "mark": { "type": "geoshape", "fill": "skyblue" },
+      "projection": {
+        "type": "mercator",
+        "center": { "expr": "center_to" },
+        "scale": { "expr": "zoom_level" }
+      }
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/vega/vega-datasets/main/data/world-110m.json",
+        "format": { "type": "topojson", "feature": "land" }
+      },
+      "mark": { "type": "geoshape", "fill": "#eee", "stroke": "lightgray" },
+      "projection": {
+        "type": "mercator",
+        "center": { "expr": "center_to" },
+        "scale": { "expr": "zoom_level" }
+      }
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/ChingLingChen/FIT3179-Homework-Week-10/refs/heads/main/open-meteo-6.01N116.12E7m.csv",
+        "format": { "type": "csv", "parse": { "average_temperature": "number" } }
+      },
+      "transform": [
+        {
+          "calculate": "year_month_select + '-' + day_select + 'T' + hour_select + ':00'",
+          "as": "selected_time"
+        },
+        { "filter": "datum.time === datum.selected_time" },
+        {
+          "lookup": "state",
+          "from": {
+            "data": {
+              "url": "https://raw.githubusercontent.com/ChingLingChen/FIT3179-Homework-Week-10/main/my_1.json",
+              "format": { "type": "json", "property": "features" }
+            },
+            "key": "properties.name"
+          },
+          "as": "geo"
+        }
+      ],
+      "mark": { "type": "geoshape", "stroke": "white", "strokeWidth": 1 },
+      "projection": {
+        "type": "mercator",
+        "center": { "expr": "center_to" },
+        "scale": { "expr": "zoom_level" }
+      },
+      "encoding": {
+        "shape": { "field": "geo", "type": "geojson" },
+        "color": {
+          "field": "average_temperature",
+          "type": "quantitative",
+          "scale": { "scheme": "reds", "domain": [20, 34] },
+          "legend": { "title": "Temperature(°C)" }
+        },
+        "tooltip": [
+          { "field": "state", "title": "State" },
+          { "field": "average_temperature", "title": "Temperature (°C)", "format": ".1f" },
+          { "field": "time", "title": "Time" }
+        ]
+      }
+    }
+  ]
+}
