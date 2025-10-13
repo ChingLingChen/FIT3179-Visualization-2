@@ -116,7 +116,7 @@
           "field": "average_temperature",
           "type": "quantitative",
           "scale": { "scheme": "reds", "domain": [20, 34] },
-          "legend": { "title": "Temperature(°C)" }
+          "legend": { "title": "Average Temperature(°C)" }
         },
         "tooltip": [
           { "field": "state", "title": "State" },
