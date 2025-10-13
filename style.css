@@ -38,20 +38,16 @@ h1 {
   font-family: serif;
   color: #333;
   margin-bottom: 20px;
-  text-align: center;
+  text-align: left;
 }
 
 .content-block {
   display: flex;
   flex-direction: row;
   gap: 40px;
-  justify-content: space-between; /* 讓左右分佈清楚 */
+  justify-content: space-between;
   align-items: flex-start;
   width: 100%;
-}
-
-.reverse {
-  flex-direction: row-reverse;
 }
 
 .vis-block {
@@ -84,10 +80,6 @@ h1 {
   .content-block {
     flex-direction: column;
     align-items: center;
-  }
-
-  .reverse {
-    flex-direction: column;
   }
 
   .annotation {
