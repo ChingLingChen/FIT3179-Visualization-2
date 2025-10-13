@@ -26,29 +26,37 @@ h1 {
   color: #555;
 }
 
-.dashboard {
+.section {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding-bottom: 20px;
+}
+
+.section h2 {
+  font-size: 28px;
+  font-family: serif;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.content-block {
   display: flex;
   flex-direction: row;
+  gap: 40px;
   justify-content: center;
   align-items: flex-start;
-  gap: 40px;
-  max-width: 1200px;
-  margin: 0 auto;
 }
 
 .reverse {
   flex-direction: row-reverse;
 }
 
-.map-area {
+.vis-block {
   flex: 2;
-  max-width: 800px;
   min-width: 700px;
-  overflow: hidden;
-}
-
-#map, #metrics {
-  width: 100%;
+  max-width: 800px;
+  min-height: 400px;
 }
 
 .annotation {
@@ -70,9 +78,13 @@ h1 {
 }
 
 @media screen and (max-width: 1000px) {
-  .dashboard {
+  .content-block {
     flex-direction: column;
     align-items: center;
+  }
+
+  .reverse {
+    flex-direction: column;
   }
 
   .annotation {
@@ -80,28 +92,7 @@ h1 {
     margin-top: 30px;
   }
 
-  .map-area {
+  .vis-block {
     max-width: 100%;
   }
-
-  .reverse {
-    flex-direction: column;
-  }
-}
-
-.second-chart {
-  max-width: 900px;
-  margin: 60px auto 0 auto;
-  text-align: center;
-}
-
-.second-chart h2 {
-  font-size: 28px;
-  margin-bottom: 20px;
-  font-family: serif;
-  color: #333;
-}
-
-#precipitation {
-  width: 100%;
 }
