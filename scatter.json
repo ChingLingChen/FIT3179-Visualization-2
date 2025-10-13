@@ -6,28 +6,25 @@
   "data": {
     "url": "https://raw.githubusercontent.com/ChingLingChen/FIT3179-Visualization-2/refs/heads/main/Malaysia%20yeartodate.csv"
   },
-  "params": [
+  "transform": [
+    { "calculate": "toDate(datum.datetime)", "as": "date_obj" },
+    { "calculate": "timeFormat(datum.date_obj, '%b')", "as": "Month" },
     {
-      "name": "selectedMonth",
-      "value": null,
-      "bind": {
-        "input": "select",
-        "options": [null, "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct"],
-        "labels": ["Show All", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct"]
-      }
+      "filter": "datum.precip > 0 && datum.humidity > 0 && datum.windspeed > 0"
+    },
+    {
+      "filter": {"param": "monthFilter"}
     }
   ],
-  "transform": [
+  "params": [
     {
-      "calculate": "toDate(datum.datetime)",
-      "as": "date_obj"
-    },
-    {
-      "calculate": "timeFormat(datum.date_obj, '%b')",
-      "as": "Month"
-    },
-    {
-      "filter": "selectedMonth == null || datum.Month == selectedMonth"
+      "name": "monthFilter",
+      "select": {
+        "type": "point",
+        "fields": ["Month"],
+        "toggle": false,
+        "clear": "dblclick"
+      }
     }
   ],
   "mark": {
@@ -66,6 +63,13 @@
       { "field": "humidity", "type": "quantitative", "format": ".1f" },
       { "field": "windspeed", "type": "quantitative", "format": ".1f" },
       { "field": "uvindex", "type": "quantitative", "format": ".1f" }
-    ]
+    ],
+    "opacity": {
+      "condition": {
+        "param": "monthFilter",
+        "value": 0.9
+      },
+      "value": 0.2
+    }
   }
 }
