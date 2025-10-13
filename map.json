@@ -90,7 +90,7 @@
     },
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/ChingLingChen/FIT3179-Homework-Week-10/refs/heads/main/open-meteo-6.01N116.12E7m.csv",
+        "url": "https://raw.githubusercontent.com/ChingLingChen/FIT3179-Visualization-2/refs/heads/main/open-meteo-6.01N116.12E7m.csv",
         "format": { "type": "csv", "parse": { "average_temperature": "number" } }
       },
       "transform": [
@@ -103,7 +103,7 @@
           "lookup": "state",
           "from": {
             "data": {
-              "url": "https://raw.githubusercontent.com/ChingLingChen/FIT3179-Homework-Week-10/main/my_1.json",
+              "url": "https://raw.githubusercontent.com/ChingLingChen/FIT3179-Visualization-2/refs/heads/main/my_1.json",
               "format": { "type": "json", "property": "features" }
             },
             "key": "properties.name"
