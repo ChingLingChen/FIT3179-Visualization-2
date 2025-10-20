@@ -107,9 +107,16 @@ h1 {
   min-height: 450px;
 }
 
-/* Color helpers */
-.cooler { color: #3b82f6; font-weight: 600; } /* 中藍 */
-.hotter { color: #ef4444; font-weight: 600; } /* 深紅 */
+/* Color helpers for temperature */
+.cooler {
+  color: #fbb4b9; /* 淺紅，對應低溫 */
+  font-weight: bold;
+}
+
+.hotter {
+  color: #990000; /* 深紅，對應高溫 */
+  font-weight: bold;
+}
 
 .color-annotation span.precip {
   color: #6baed6;
