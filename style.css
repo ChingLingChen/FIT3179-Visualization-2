@@ -2,77 +2,74 @@ body {
   font-family: 'Helvetica', 'Arial', sans-serif;
   margin: 0;
   padding: 40px 0;
-  background-color: #f0f2f5; /* 更柔和的淺灰 */
-  color: #1f2937; /* 深灰文字 */
+  background: linear-gradient(to bottom, #f0f4ff, #fefefe); /* 淡藍到白漸層 */
+  color: #1f2937;
 }
 
 /* Header */
 header {
   text-align: center;
-  margin-bottom: 40px;
-  padding: 0 20px;
+  margin-bottom: 30px;
 }
 
 h1 {
   font-family: 'Georgia', serif;
-  font-size: 38px; /* 略增 */
-  margin-bottom: 15px;
-  color: #1e3a8a; /* 深藍標題 */
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); /* 輕微陰影 */
+  font-size: 42px;
+  margin-bottom: 12px;
+  background: linear-gradient(to right, #3b82f6, #1e3a8a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .intro {
-  font-size: 20px; /* 保持增大 */
-  max-width: 850px; /* 略增 */
-  margin: 0 auto 50px auto;
+  font-size: 20px;
+  max-width: 800px;
+  margin: 0 auto 40px auto;
   text-align: center;
-  line-height: 1.9; /* 更舒適的行高 */
-  color: #4b5563; /* 中灰文字 */
-  font-weight: 300; /* 更輕盈 */
+  line-height: 1.8;
+  color: #4b5563;
 }
 
 /* Section container */
 .section {
   width: 100%;
-  max-width: 1350px; /* 略增 */
-  margin: 0 auto 90px auto;
-  padding: 0 25px;
+  max-width: 1300px;
+  margin: 0 auto 80px auto;
+  padding: 0 20px;
 }
 
 /* Card block */
 .card {
   background-color: #ffffff;
-  border: 1px solid #e0e7ff; /* 更柔和的藍灰邊框 */
-  border-radius: 12px; /* 更圓潤 */
-  padding: 28px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* 漸進式陰影 */
-  transition: transform 0.2s ease; /* 增加互動性 */
+  border-left: 6px solid #3b82f6; /* 左側色條點綴 */
+  border-radius: 12px;
+  padding: 32px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease;
 }
 
 .card:hover {
-  transform: translateY(-3px); /* 輕微抬升 */
+  transform: translateY(-4px);
 }
 
 /* Section title */
 .section h2 {
-  font-size: 26px; /* 略增 */
+  font-size: 26px;
   font-family: 'Georgia', serif;
   color: #1e3a8a;
-  margin-bottom: 18px;
-  border-bottom: 2px solid #60a5fa; /* 更明亮的藍 */
-  padding-bottom: 8px;
-  letter-spacing: 0.5px; /* 增加空氣感 */
+  margin-bottom: 20px;
+  border-bottom: 2px dashed #3b82f6;
+  padding-bottom: 6px;
 }
 
 /* Layout */
 .content-block {
   display: flex;
   flex-direction: row;
-  gap: 50px; /* 增加間距 */
-  justify-content: space-around; /* 更動態的間距 */
+  gap: 40px;
+  justify-content: space-between;
   align-items: flex-start;
   width: 100%;
-  flex-wrap: wrap; /* 允許換行 */
 }
 
 .center-align {
@@ -84,21 +81,23 @@ h1 {
 }
 
 .annotation {
-  flex: 1 1 38%; /* 略增靈活性 */
-  font-size: 16px; /* 略增 */
-  line-height: 1.8; /* 更舒適 */
+  flex: 1 1 35%;
+  min-width: 280px;
+  max-width: 35vw;
+  font-size: 15px;
+  line-height: 1.7;
   word-break: break-word;
   color: #374151;
-  margin-right: 25px; /* 略增 */
-  padding: 10px; /* 增加內邊距 */
+  margin-right: 30px;
 }
 
+/* 第二個 section 的文字居中 */
 .center-align-text {
   text-align: center;
   margin: 0 auto;
-  padding: 10px;
 }
 
+/* 垂直置中 */
 .center-text {
   display: flex;
   flex-direction: column;
@@ -108,11 +107,11 @@ h1 {
 }
 
 .vis-block {
-  flex: 1 1 58%; /* 略減 */
+  flex: 1 1 62%;
+  min-width: 600px;
+  max-width: 62vw;
   min-height: 450px;
-  margin-left: 25px; /* 略增 */
-  padding: 10px; /* 增加內邊距 */
-  border-left: 1px dashed #e0e7ff; /* 增加分隔線 */
+  margin-left: 30px;
 }
 
 /* Specific chart heights */
@@ -124,34 +123,34 @@ h1 {
 
 /* Color helpers for temperature */
 .cooler {
-  color: #f8d7da; /* 更柔和的淺紅 */
-  font-weight: 600;
+  color: #fbb4b9;
+  font-weight: bold;
 }
 
 .hotter {
-  color: #b22222; /* 更深沉的紅 */
-  font-weight: 600;
+  color: #990000;
+  font-weight: bold;
 }
 
 /* Color helpers for metrics */
 .color-annotation span.precip {
-  color: #74b9ff; /* 更明亮的藍 */
-  font-weight: 600;
+  color: #6baed6;
+  font-weight: bold;
 }
 
 .color-annotation span.humidity {
-  color: #ffd08a; /* 更溫暖的橙 */
-  font-weight: 600;
+  color: #fdae6b;
+  font-weight: bold;
 }
 
 .color-annotation span.windspeed {
-  color: #90ee90; /* 更鮮活的綠 */
-  font-weight: 600;
+  color: #74c476;
+  font-weight: bold;
 }
 
 .color-annotation span.uvindex {
-  color: #b0b0e0; /* 更柔和的紫灰 */
-  font-weight: 600;
+  color: #9e9ac8;
+  font-weight: bold;
 }
 
 /* Link styling */
@@ -159,11 +158,10 @@ a {
   color: #1e3a8a;
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.3s ease;
 }
 
 a:hover {
-  color: #60a5fa;
+  color: #3b82f6;
   text-decoration: underline;
 }
 
@@ -180,18 +178,16 @@ a:hover {
     margin-top: 20px;
     max-width: 100%;
     margin-right: 0;
-    padding: 0;
   }
 
   .vis-block {
     max-width: 100%;
+    min-width: 0;
     margin-left: 0;
-    padding: 0;
-    border-left: none;
   }
 
   .card {
-    padding: 18px;
+    padding: 20px;
   }
 
   .section h2 {
@@ -204,8 +200,8 @@ a:hover {
   text-align: center;
   font-size: 14px;
   color: #6b7280;
-  margin-top: 70px;
+  margin-top: 60px;
   padding-top: 20px;
-  border-top: 1px dashed #e0e7ff; /* 更柔和的分割線 */
-  line-height: 1.7;
+  border-top: 1px solid #e5e7eb;
+  line-height: 1.6;
 }
