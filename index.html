@@ -36,40 +36,38 @@
   <section class="section">
     <div class="card">
       <h2>Weather Relationships and Monthly Averages</h2>
-      <div class="content-block left-text-right-vis">
-        <div class="annotation center-text center-align-text">
-          <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-          <p><strong>1) Main pattern</strong><br>
-            Most observations fall at low precipitation (< 0.5 in) and relatively high humidity (~70–85%). This indicates
-            many humid days with only light or no measurable rain — typical for tropical climates with frequent cloudiness but
-            intermittent heavy showers.</p>
+      <div class="annotation center-text center-align-text">
+  <p><strong>1) Main pattern</strong><br>
+    Most data points show low precipitation (< 0.5 in) with high humidity (~70–85%), typical of humid tropical days with light or no rain.
+  </p>
 
-          <p><strong>2) Extreme events</strong><br>
-            Large rainfall events are rare in the dataset but notable when they occur. For example, <span style="color:#ff9896">April</span>
-            contains the single largest recorded daily rainfall (~3.2 in on 2025-04-23). These extremes coincide with very high humidity,
-            reinforcing that heavy rain events happen during saturated atmospheric conditions.</p>
+  <p><strong>2) Extreme events</strong><br>
+    Heavy rainfall is rare but notable — e.g., <span style="color:#ff9896">April</span> 23rd recorded ~3.2 in. These events align with very high humidity.
+  </p>
 
-          <p><strong>3) Wind relationship</strong><br>
-            Point size encodes wind speed. There is no strong positive correlation between wind speed and rainfall magnitude in the scatter:
-            strong winds appear both with small and moderate precipitation values, so wind alone is not a reliable predictor of heavy rainfall
-            in this record.</p>
-          <hr>
-         <p><strong>4) Cloudcover</strong><br>
-            Average cloud cover peaks around <span style="color:#ff9896">April</span> (~40–43%) and is lowest in <span style="color:#fdd0a2">October</span>
-            (~28%). April's higher cloudiness aligns with the month’s larger rain events.</p>
+  <p><strong>3) Wind relationship</strong><br>
+    Wind speed (point size) shows no clear link to rainfall. Strong winds occur across low and moderate rain levels.
+  </p>
 
-          <p><strong>5) Visibility</strong><br>
-            Monthly visibility is generally steady (~5.8–6.2 km). Slightly better visibility appears in
-            <span style="color:#fdd0a2">October</span> and <span style="color:#ffbb78">February</span>, consistent with lower cloud and clearer skies.</p>
+  <hr>
 
-          <p><strong>6) Solar radiation</strong><br>
-            Solar radiation increases from early‑year values (e.g. <span style="color:#aec7e8">January</span>) toward a peak in
-            <span style="color:#fdd0a2">October</span>, matching the drop in cloudcover and implying stronger sunshine potential in October.</p>
+  <p><strong>4) Cloudcover</strong><br>
+    Cloud cover peaks in <span style="color:#ff9896">April</span> (~40–43%) and dips in <span style="color:#fdd0a2">October</span> (~28%), matching rainfall trends.
+  </p>
 
-          <p><strong>7) Moonphase & seasonality</strong><br>
-            Moonphase averages show little month‑to‑month variability (no clear seasonal signal). Overall seasonal signals are stronger in
-            precipitation, cloudcover and solar radiation.</p>
-        </div>
+  <p><strong>5) Visibility</strong><br>
+    Visibility stays steady (~5.8–6.2 km), slightly clearer in <span style="color:#fdd0a2">October</span> and <span style="color:#ffbb78">February</span>.
+  </p>
+
+  <p><strong>6) Solar radiation</strong><br>
+    Radiation rises from <span style="color:#aec7e8">January</span> to a peak in <span style="color:#fdd0a2">October</span>, reflecting reduced cloudcover.
+  </p>
+
+  <p><strong>7) Moonphase & seasonality</strong><br>
+    Moonphase shows little variation. Seasonal signals are clearer in precipitation, cloudcover, and solar radiation.
+  </p>
+</div>
+
         <div id="precipitation" class="vis-block"></div>
       </div>
     </div>
