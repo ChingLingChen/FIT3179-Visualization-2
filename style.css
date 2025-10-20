@@ -41,76 +41,72 @@ h1 {
   text-align: left;
 }
 
+/* row layout: annotation left, vis right */
 .content-block {
   display: flex;
   flex-direction: row;
-  gap: 40px;
+  gap: 24px;
   justify-content: space-between;
   align-items: flex-start;
   width: 100%;
 }
 
-.center-align {
-  align-items: center;
-}
-
-.vis-block {
+.row-left-right .vis-block {
   flex: 2;
   min-width: 600px;
   max-width: 800px;
-  min-height: 400px;
 }
 
-.annotation {
+.row-left-right .annotation {
   flex: 1;
-  min-width: 280px;
-  max-width: 400px;
+  min-width: 240px;
+  max-width: 360px;
   font-size: 16px;
   line-height: 1.6;
   word-break: break-word;
 }
 
-.cooler {
-  color: #fbb4b4;
-  font-weight: bold;
+/* center vertically the annotation content to align with the middle of the right visual */
+.center-vert {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 500px; /* matches scatter height; overridden for bars below via id selector */
 }
 
-.hotter {
-  color: #990000;
-  font-weight: bold;
+#bars-annotation.center-vert {
+  height: 420px; /* matches bars visual height */
 }
 
-.color-annotation span.precip {
-  color: #6baed6;
-  font-weight: bold;
+/* small title inside annotation aligned to the center of the vis */
+.vis-title {
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-align: center;
 }
 
-.color-annotation span.humidity {
-  color: #fdae6b;
-  font-weight: bold;
+/* vis blocks sizing */
+#scatter {
+  width: 100%;
+  min-height: 500px;
+  margin: 0 auto;
 }
 
-.color-annotation span.windspeed {
-  color: #74c476;
-  font-weight: bold;
+#bars {
+  width: 100%;
+  min-height: 420px;
+  margin: 0 auto;
 }
 
-.color-annotation span.uvindex {
-  color: #9e9ac8;
-  font-weight: bold;
+.footer {
+  text-align: center;
+  font-size: 14px;
+  color: #777;
+  margin-top: 80px;
+  padding-top: 20px;
+  border-top: 1px solid #ddd;
+  line-height: 1.6;
 }
-
-/* 新增月份顏色類 */
-.annotation span.jan { color: #aec7e8; font-weight: bold; }
-.annotation span.feb { color: #ffbb78; font-weight: bold; }
-.annotation span.mar { color: #a3bffa; font-weight: bold; }
-.annotation span.apr { color: #ff9896; font-weight: bold; }
-.annotation span.may { color: #c5b0d5; font-weight: bold; }
-.annotation span.jun { color: #f7b6d2; font-weight: bold; }
-.annotation span.jul { color: #c49c94; font-weight: bold; }
-.annotation span.aug { color: #b0b7f2; font-weight: bold; }
-.annotation span.sep { color: #9edae5; font-weight: bold; }
-.annotation span.oct { color: #fdd0a2; font-weight: bold; }
 
 @media screen and (max-width: 1000px) {
   .content-block {
@@ -126,20 +122,9 @@ h1 {
   .vis-block {
     max-width: 100%;
   }
-}
 
-#precipitation {
-  width: 100%;
-  min-height: 500px;
-  margin: 0 auto;
-}
-
-.footer {
-  text-align: center;
-  font-size: 14px;
-  color: #777;
-  margin-top: 80px;
-  padding-top: 20px;
-  border-top: 1px solid #ddd;
-  line-height: 1.6;
+  .center-vert {
+    height: auto;
+    justify-content: flex-start;
+  }
 }
