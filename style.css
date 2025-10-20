@@ -66,6 +66,10 @@ h1 {
   text-align: left;
 }
 
+.left-text-right-vis {
+  flex-direction: row; /* 確保文字在左，圖在右 */
+}
+
 .vis-block {
   flex: 2;
   min-width: 600px;
@@ -125,6 +129,11 @@ h1 {
 
   .vis-block {
     max-width: 100%;
+  }
+
+  /* 確保小螢幕下 left-text-right-vis 也堆疊 */
+  .left-text-right-vis {
+    flex-direction: column;
   }
 }
 
