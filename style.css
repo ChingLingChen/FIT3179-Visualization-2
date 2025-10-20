@@ -2,8 +2,8 @@ body {
   font-family: 'Helvetica', sans-serif;
   margin: 0;
   padding: 40px 0;
-  background-color: #ffffff;
-  color: #333;
+  background-color: #fffefc;
+  color: #2c2c2c;
 }
 
 /* Header */
@@ -16,6 +16,7 @@ h1 {
   font-family: serif;
   font-size: 40px;
   margin-bottom: 10px;
+  color: #ff6f61;
 }
 
 .intro {
@@ -37,20 +38,20 @@ h1 {
 
 /* Card block */
 .card {
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+  background-color: #fff8e6;
+  border: 1px solid #ffd54f;
+  border-radius: 10px;
   padding: 30px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 10px rgba(255, 111, 97, 0.1);
 }
 
 /* Section title */
 .section h2 {
   font-size: 28px;
   font-family: serif;
-  color: #333;
+  color: #4db6ac;
   margin-bottom: 20px;
-  border-bottom: 2px solid #ccc;
+  border-bottom: 3px solid #ffb347;
   padding-bottom: 8px;
 }
 
@@ -79,6 +80,7 @@ h1 {
   font-size: 16px;
   line-height: 1.6;
   word-break: break-word;
+  color: #444;
 }
 
 .center-text {
@@ -104,13 +106,13 @@ h1 {
 }
 
 /* Color helpers */
-.cooler { color: #fbb4b4; font-weight: bold; }
-.hotter { color: #990000; font-weight: bold; }
+.cooler { color: #4db6ac; font-weight: bold; }
+.hotter { color: #ff6f61; font-weight: bold; }
 
-.color-annotation span.precip { color: #6baed6; font-weight: bold; }
-.color-annotation span.humidity { color: #fdae6b; font-weight: bold; }
-.color-annotation span.windspeed { color: #74c476; font-weight: bold; }
-.color-annotation span.uvindex { color: #9e9ac8; font-weight: bold; }
+.color-annotation span.precip { color: #4db6ac; font-weight: bold; }
+.color-annotation span.humidity { color: #ffb347; font-weight: bold; }
+.color-annotation span.windspeed { color: #81c784; font-weight: bold; }
+.color-annotation span.uvindex { color: #9575cd; font-weight: bold; }
 
 /* Responsive */
 @media screen and (max-width: 1000px) {
