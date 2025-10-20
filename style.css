@@ -111,10 +111,25 @@ h1 {
 .cooler { color: #3b82f6; font-weight: 600; } /* 中藍 */
 .hotter { color: #ef4444; font-weight: 600; } /* 深紅 */
 
-.color-annotation span.precip { color: #3b82f6; font-weight: 600; } /* 降雨 */
-.color-annotation span.humidity { color: #8b5cf6; font-weight: 600; } /* 濕度 */
-.color-annotation span.windspeed { color: #10b981; font-weight: 600; } /* 風速 */
-.color-annotation span.uvindex { color: #6b7280; font-weight: 600; } /* UV指數 */
+.color-annotation span.precip {
+  color: #6baed6;
+  font-weight: bold;
+}
+
+.color-annotation span.humidity {
+  color: #fdae6b;
+  font-weight: bold;
+}
+
+.color-annotation span.windspeed {
+  color: #74c476;
+  font-weight: bold;
+}
+
+.color-annotation span.uvindex {
+  color: #9e9ac8;
+  font-weight: bold;
+}
 
 /* Responsive */
 @media screen and (max-width: 1000px) {
