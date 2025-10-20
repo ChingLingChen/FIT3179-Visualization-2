@@ -19,7 +19,7 @@
     {
       "title": "Precipitation vs Humidity",
       "width": 500,
-      "height": 500,
+      "height": 300,
       "transform": [
         { "calculate": "toDate(datum.datetime)", "as": "date_obj" },
         { "calculate": "timeFormat(datum.date_obj, '%b')", "as": "Month" },
