@@ -1,65 +1,65 @@
 body {
-  font-family: 'Helvetica', sans-serif;
+  font-family: 'Helvetica', 'Arial', sans-serif;
   margin: 0;
   padding: 40px 0;
-  background-color: #fffefc;
-  color: #2c2c2c;
+  background-color: #f3f4f6; /* 淺灰背景，專業感 */
+  color: #1f2937; /* 深灰文字 */
 }
 
 /* Header */
 header {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 h1 {
-  font-family: serif;
-  font-size: 40px;
-  margin-bottom: 10px;
-  color: #ff6f61;
+  font-family: 'Georgia', serif;
+  font-size: 36px;
+  margin-bottom: 12px;
+  color: #1e3a8a; /* 深藍標題 */
 }
 
 .intro {
-  font-size: 18px;
+  font-size: 16px;
   max-width: 800px;
   margin: 0 auto 40px auto;
   text-align: center;
-  line-height: 1.4;
-  color: #555;
+  line-height: 1.5;
+  color: #4b5563; /* 中灰文字 */
 }
 
 /* Section container */
 .section {
   width: 100%;
   max-width: 1200px;
-  margin: 0 auto 60px auto;
+  margin: 0 auto 80px auto;
   padding: 0 20px;
 }
 
 /* Card block */
 .card {
-  background-color: #fff8e6;
-  border: 1px solid #ffd54f;
-  border-radius: 10px;
-  padding: 30px;
-  box-shadow: 0 4px 10px rgba(255, 111, 97, 0.1);
+  background-color: #ffffff; /* 純白背景 */
+  border: 1px solid #e5e7eb; /* 淺灰邊框 */
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* 輕微陰影 */
 }
 
 /* Section title */
 .section h2 {
-  font-size: 28px;
-  font-family: serif;
-  color: #4db6ac;
-  margin-bottom: 20px;
-  border-bottom: 3px solid #ffb347;
-  padding-bottom: 8px;
+  font-size: 24px;
+  font-family: 'Georgia', serif;
+  color: #1e3a8a; /* 深藍標題 */
+  margin-bottom: 16px;
+  border-bottom: 2px solid #3b82f6; /* 中藍底線 */
+  padding-bottom: 6px;
 }
 
 /* Layout */
 .content-block {
   display: flex;
   flex-direction: row;
-  gap: 32px;
+  gap: 30px;
   justify-content: space-between;
   align-items: flex-start;
   width: 100%;
@@ -70,17 +70,17 @@ h1 {
 }
 
 .left-text-right-vis {
-  flex-direction: row;
+  flex-direction: row; /* 文字在左，圖在右 */
 }
 
 .annotation {
-  flex: 1 1 30%;
-  min-width: 240px;
-  max-width: 30vw;
-  font-size: 16px;
-  line-height: 1.6;
+  flex: 1 1 35%; /* 增加文字區域比例 */
+  min-width: 250px;
+  max-width: 35vw;
+  font-size: 15px;
+  line-height: 1.7;
   word-break: break-word;
-  color: #444;
+  color: #374151; /* 深中灰 */
 }
 
 .center-text {
@@ -92,27 +92,27 @@ h1 {
 }
 
 .vis-block {
-  flex: 1 1 68%;
+  flex: 1 1 62%; /* 調整圖表區域比例 */
   min-width: 0;
-  max-width: 68vw;
-  min-height: 420px;
+  max-width: 62vw;
+  min-height: 450px; /* 統一高度 */
 }
 
 /* Specific chart heights */
 #map,
 #precipitation,
 #metrics {
-  min-height: 420px;
+  min-height: 450px;
 }
 
 /* Color helpers */
-.cooler { color: #4db6ac; font-weight: bold; }
-.hotter { color: #ff6f61; font-weight: bold; }
+.cooler { color: #3b82f6; font-weight: 600; } /* 中藍 */
+.hotter { color: #ef4444; font-weight: 600; } /* 深紅 */
 
-.color-annotation span.precip { color: #4db6ac; font-weight: bold; }
-.color-annotation span.humidity { color: #ffb347; font-weight: bold; }
-.color-annotation span.windspeed { color: #81c784; font-weight: bold; }
-.color-annotation span.uvindex { color: #9575cd; font-weight: bold; }
+.color-annotation span.precip { color: #3b82f6; font-weight: 600; } /* 降雨 */
+.color-annotation span.humidity { color: #8b5cf6; font-weight: 600; } /* 濕度 */
+.color-annotation span.windspeed { color: #10b981; font-weight: 600; } /* 風速 */
+.color-annotation span.uvindex { color: #6b7280; font-weight: 600; } /* UV指數 */
 
 /* Responsive */
 @media screen and (max-width: 1000px) {
@@ -133,7 +133,11 @@ h1 {
   }
 
   .card {
-    padding: 20px;
+    padding: 16px;
+  }
+
+  .section h2 {
+    font-size: 20px;
   }
 }
 
@@ -141,9 +145,9 @@ h1 {
 .footer {
   text-align: center;
   font-size: 14px;
-  color: #777;
-  margin-top: 80px;
+  color: #6b7280; /* 中灰 */
+  margin-top: 60px;
   padding-top: 20px;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #e5e7eb; /* 淺灰線 */
   line-height: 1.6;
 }
