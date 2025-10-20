@@ -31,7 +31,7 @@ h1 {
 /* Section container */
 .section {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1300px; /* 增加寬度 */
   margin: 0 auto 80px auto;
   padding: 0 20px;
 }
@@ -59,7 +59,7 @@ h1 {
 .content-block {
   display: flex;
   flex-direction: row;
-  gap: 40px; /* 增加間距 */
+  gap: 40px; /* 保持間距 */
   justify-content: space-between;
   align-items: flex-start;
   width: 100%;
@@ -75,13 +75,13 @@ h1 {
 
 .annotation {
   flex: 1 1 35%; /* 保持比例 */
-  min-width: 250px;
+  min-width: 280px; /* 增加最小寬度 */
   max-width: 35vw;
   font-size: 15px;
   line-height: 1.7;
   word-break: break-word;
   color: #374151; /* 深中灰 */
-  margin-right: 20px; /* 增加右側間距，避免圖蓋字 */
+  margin-right: 30px; /* 增加右側間距 */
 }
 
 .center-text {
@@ -94,10 +94,10 @@ h1 {
 
 .vis-block {
   flex: 1 1 62%; /* 保持比例 */
-  min-width: 0;
+  min-width: 600px; /* 增加最小寬度 */
   max-width: 62vw;
   min-height: 450px; /* 統一高度 */
-  margin-left: 20px; /* 增加左側間距 */
+  margin-left: 30px; /* 增加左側間距 */
 }
 
 /* Specific chart heights */
@@ -133,6 +133,7 @@ h1 {
 
   .vis-block {
     max-width: 100%;
+    min-width: 0; /* 重置最小寬度 */
     margin-left: 0; /* 移除左側間距 */
   }
 
