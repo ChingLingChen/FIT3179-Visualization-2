@@ -6,6 +6,7 @@ body {
   color: #333;
 }
 
+/* center header */
 header {
   text-align: center;
   margin-bottom: 20px;
@@ -17,18 +18,20 @@ h1 {
   margin-bottom: 10px;
 }
 
+/* short intro */
 .intro {
   font-size: 18px;
-  max-width: 1200px;
+  max-width: 800px;
   margin: 0 auto 40px auto;
   text-align: center;
-  line-height: 1.6;
+  line-height: 1.4;
   color: #555;
 }
 
+/* unified section sizing */
 .section {
   width: 100%;
-  max-width: 1200px; /* 統一最大寬度 */
+  max-width: 1000px; /* unify all parts width */
   margin: 60px auto;
   padding: 0 20px;
 }
@@ -41,20 +44,38 @@ h1 {
   text-align: left;
 }
 
+/* unified content block layout */
 .content-block {
   display: flex;
   flex-direction: row;
-  gap: 40px;
+  gap: 32px;
   justify-content: space-between;
   align-items: flex-start;
   width: 100%;
-  max-width: 1200px; /* 統一內容區塊寬度 */
+  max-width: 1000px; /* same as section */
+  margin: 0 auto;
 }
 
+/* variants */
 .center-align {
   align-items: center;
 }
 
+.left-text-right-vis {
+  flex-direction: row; /* text left, visual right */
+}
+
+/* annotation and visual proportions */
+.annotation {
+  flex: 1 1 32%;
+  min-width: 220px;
+  max-width: 360px;
+  font-size: 16px;
+  line-height: 1.6;
+  word-break: break-word;
+}
+
+/* annotation vertical centering when needed */
 .center-text {
   display: flex;
   flex-direction: column;
@@ -63,55 +84,27 @@ h1 {
   text-align: left;
 }
 
-.left-text-right-vis {
-  flex-direction: row; /* 文字在左，圖在右 */
-}
-
+/* visual block proportion matches other parts */
 .vis-block {
-  flex: 2;
-  min-width: 600px; /* 統一最小寬度 */
-  max-width: 800px; /* 統一最大寬度 */
-  min-height: 400px;
+  flex: 2 1 66%;
+  min-width: 0; /* allow shrinking to match layout */
+  max-width: 640px;
+  min-height: 420px;
 }
 
-.annotation {
-  flex: 1;
-  min-width: 280px; /* 統一最小寬度 */
-  max-width: 400px; /* 統一最大寬度 */
-  font-size: 16px;
-  line-height: 1.6;
-  word-break: break-word;
-}
+/* specific sizes for different visual types to keep alignment */
+#map { min-height: 420px; }
+#precipitation { min-height: 420px; }
+#metrics { min-height: 420px; }
 
-.cooler {
-  color: #fbb4b4;
-  font-weight: bold;
-}
+/* color helpers */
+.cooler { color: #fbb4b4; font-weight: bold; }
+.hotter { color: #990000; font-weight: bold; }
 
-.hotter {
-  color: #990000;
-  font-weight: bold;
-}
-
-.color-annotation span.precip {
-  color: #6baed6;
-  font-weight: bold;
-}
-
-.color-annotation span.humidity {
-  color: #fdae6b;
-  font-weight: bold;
-}
-
-.color-annotation span.windspeed {
-  color: #74c476;
-  font-weight: bold;
-}
-
-.color-annotation span.uvindex {
-  color: #9e9ac8;
-  font-weight: bold;
-}
+.color-annotation span.precip { color: #6baed6; font-weight: bold; }
+.color-annotation span.humidity { color: #fdae6b; font-weight: bold; }
+.color-annotation span.windspeed { color: #74c476; font-weight: bold; }
+.color-annotation span.uvindex { color: #9e9ac8; font-weight: bold; }
 
 @media screen and (max-width: 1000px) {
   .content-block {
@@ -121,7 +114,7 @@ h1 {
 
   .annotation {
     text-align: center;
-    margin-top: 30px;
+    margin-top: 20px;
   }
 
   .vis-block {
@@ -129,7 +122,7 @@ h1 {
   }
 
   .left-text-right-vis {
-    flex-direction: column; /* 小螢幕下文字在上，圖在下 */
+    flex-direction: column; /* small screens: text above, vis below */
   }
 }
 
