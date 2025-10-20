@@ -50,9 +50,18 @@ h1 {
   font-size: 24px;
   font-family: 'Georgia', serif;
   color: #1e3a8a; /* 深藍標題 */
-  margin-bottom: 16px;
+  margin-bottom: 8px; /* 減少標題底部間距，為介紹留空間 */
   border-bottom: 2px solid #3b82f6; /* 中藍底線 */
   padding-bottom: 6px;
+}
+
+/* Section intro */
+.section-intro {
+  font-size: 14px;
+  color: #4b5563; /* 與 intro 一致 */
+  margin: 0 0 12px 0; /* 底部間距 */
+  font-style: italic; /* 增加區別感 */
+  max-width: 100%;
 }
 
 /* Layout */
@@ -165,6 +174,10 @@ h1 {
 
   .section h2 {
     font-size: 20px;
+  }
+
+  .section-intro {
+    font-size: 12px; /* 適應小螢幕 */
   }
 }
 
