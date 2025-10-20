@@ -12,49 +12,55 @@
 <body>
   <header>
     <h1>Malaysia Weather Dashboard</h1>
-    <p class="intro">Malaysia weather overview (2024-2025).</p>
+    <p class="intro">Malaysia weather overview (2024–2025).</p>
   </header>
 
   <!-- Temperature Map Section -->
   <section class="section">
-    <h2>Hourly Temperature by Malaysian State</h2>
-    <div class="content-block center-align">
-      <div id="map" class="vis-block"></div>
-      <div class="annotation">
-        <p>At 12 PM, inland states show elevated temperatures, often exceeding <span class="hotter">28°C</span>. Coastal and highland regions remain relatively <span class="cooler">cooler</span>, around <span class="cooler">25°C</span>.</p>
-        <p>Evening hours (e.g., 8 PM) reveal a cooling trend across most regions; East Malaysia shows more stable temperatures compared to the peninsula.</p>
+    <div class="card">
+      <h2>Hourly Temperature by Malaysian State</h2>
+      <div class="content-block center-align">
+        <div id="map" class="vis-block"></div>
+        <div class="annotation">
+          <p>At 12 PM, inland states show elevated temperatures, often exceeding <span class="hotter">28°C</span>. Coastal and highland regions remain relatively <span class="cooler">cooler</span>, around <span class="cooler">25°C</span>.</p>
+          <p>Evening hours (e.g., 8 PM) reveal a cooling trend across most regions; East Malaysia shows more stable temperatures compared to the peninsula.</p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Scatter + Bar Charts Section -->
-  <section class="section scatter-bar-section">
-    <h2>Weather Relationships and Monthly Averages</h2>
-    <div class="content-block left-text-right-vis">
-      <div class="annotation center-text">
-        <p><strong>Scatter (interpretation)</strong></p>
-        <p>Most points cluster at low precipitation (&lt;0.5 in) and high humidity (~70–85%), indicating many humid days without heavy rain. Large rainfall events are rare but coincide with high humidity (e.g. <span style="color:#ff9896">Apr</span> shows the largest rain point ≈3.2 in). Wind speed (point size) does not show a clear link to extreme rainfall.</p>
-        <hr>
-        <p><strong>Bar charts (interpretation)</strong></p>
-        <p>Average cloudcover peaks in <span style="color:#ff9896">Apr</span> (~40–43%) and is lowest in <span style="color:#fdd0a2">Oct</span> (~28%). Visibility is steady (~5.8–6.2 km) with slightly higher values in <span style="color:#fdd0a2">Oct</span> and <span style="color:#ffbb78">Feb</span>. Solar radiation rises from <span style="color:#aec7e8">Jan</span> to a peak in <span style="color:#fdd0a2">Oct</span>. Moonphase shows little monthly variation.</p>
+  <section class="section">
+    <div class="card">
+      <h2>Weather Relationships and Monthly Averages</h2>
+      <div class="content-block left-text-right-vis">
+        <div class="annotation center-text">
+          <p><strong>Scatter (interpretation)</strong></p>
+          <p>Most points cluster at low precipitation (&lt;0.5 in) and high humidity (~70–85%), indicating many humid days without heavy rain. Large rainfall events are rare but coincide with high humidity (e.g. <span style="color:#ff9896">Apr</span> shows the largest rain point ≈3.2 in). Wind speed (point size) does not show a clear link to extreme rainfall.</p>
+          <hr>
+          <p><strong>Bar charts (interpretation)</strong></p>
+          <p>Average cloudcover peaks in <span style="color:#ff9896">Apr</span> (~40–43%) and is lowest in <span style="color:#fdd0a2">Oct</span> (~28%). Visibility is steady (~5.8–6.2 km) with slightly higher values in <span style="color:#fdd0a2">Oct</span> and <span style="color:#ffbb78">Feb</span>. Solar radiation rises from <span style="color:#aec7e8">Jan</span> to a peak in <span style="color:#fdd0a2">Oct</span>. Moonphase shows little monthly variation.</p>
+        </div>
+        <div id="precipitation" class="vis-block"></div>
       </div>
-
-      <div id="precipitation" class="vis-block"></div>
     </div>
   </section>
 
   <!-- Line Chart Section -->
   <section class="section">
-    <h2>Monthly Weather Metrics</h2>
-    <div class="content-block center-align">
-      <div id="metrics" class="vis-block"></div>
-      <div class="annotation color-annotation">
-        <p><span class="precip">Precipitation</span> peaks in April, drops mid-year, then rises toward the end of the year.</p>
-        <p><span class="humidity">Humidity</span> stays high year-round with a slight dip mid-year. <span class="windspeed">Wind speed</span> increases early-year then stabilizes. <span class="uvindex">UV index</span> is elevated and peaks near October.</p>
+    <div class="card">
+      <h2>Monthly Weather Metrics</h2>
+      <div class="content-block center-align">
+        <div id="metrics" class="vis-block"></div>
+        <div class="annotation color-annotation">
+          <p><span class="precip">Precipitation</span> peaks in April, drops mid-year, then rises toward the end of the year.</p>
+          <p><span class="humidity">Humidity</span> stays high year-round with a slight dip mid-year. <span class="windspeed">Wind speed</span> increases early-year then stabilizes. <span class="uvindex">UV index</span> is elevated and peaks near October.</p>
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- Footer -->
   <footer class="footer">
     <p>© 2025 FIT3179 Data Visualisation Assignment 2</p>
     <p>Created by Chen Ching Ling | Monash University</p>
