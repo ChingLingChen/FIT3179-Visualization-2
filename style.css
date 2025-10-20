@@ -28,7 +28,7 @@ h1 {
 
 .section {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1200px; /* 統一最大寬度 */
   margin: 60px auto;
   padding: 0 20px;
 }
@@ -48,14 +48,11 @@ h1 {
   justify-content: space-between;
   align-items: flex-start;
   width: 100%;
+  max-width: 1200px; /* 統一內容區塊寬度 */
 }
 
 .center-align {
   align-items: center;
-}
-
-.reverse-align {
-  flex-direction: row-reverse;
 }
 
 .center-text {
@@ -67,20 +64,20 @@ h1 {
 }
 
 .left-text-right-vis {
-  flex-direction: row; /* 確保文字在左，圖在右 */
+  flex-direction: row; /* 文字在左，圖在右 */
 }
 
 .vis-block {
   flex: 2;
-  min-width: 600px;
-  max-width: 800px;
+  min-width: 600px; /* 統一最小寬度 */
+  max-width: 800px; /* 統一最大寬度 */
   min-height: 400px;
 }
 
 .annotation {
   flex: 1;
-  min-width: 280px;
-  max-width: 400px;
+  min-width: 280px; /* 統一最小寬度 */
+  max-width: 400px; /* 統一最大寬度 */
   font-size: 16px;
   line-height: 1.6;
   word-break: break-word;
@@ -131,9 +128,8 @@ h1 {
     max-width: 100%;
   }
 
-  /* 確保小螢幕下 left-text-right-vis 也堆疊 */
   .left-text-right-vis {
-    flex-direction: column;
+    flex-direction: column; /* 小螢幕下文字在上，圖在下 */
   }
 }
 
