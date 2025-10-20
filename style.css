@@ -20,48 +20,46 @@ h1 {
 }
 
 .intro {
-  font-size: 18px; /* 增大字型大小 */
+  font-size: 20px; /* 稍微加大字型 */
   max-width: 800px;
   margin: 0 auto 40px auto;
   text-align: center;
-  line-height: 1.6; /* 增加行高 */
+  line-height: 1.8;
   color: #4b5563; /* 中灰文字 */
 }
 
 /* Section container */
 .section {
   width: 100%;
-  max-width: 1300px; /* 增加寬度 */
+  max-width: 1300px;
   margin: 0 auto 80px auto;
   padding: 0 20px;
 }
 
 /* Card block */
 .card {
-  background-color: #ffffff; /* 純白背景 */
-  border: 1px solid #e5e7eb; /* 淺灰邊框 */
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
   border-radius: 8px;
   padding: 24px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* 輕微陰影 */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 /* Section title */
 .section h2 {
   font-size: 24px;
   font-family: 'Georgia', serif;
-  color: #1e3a8a; /* 深藍標題 */
-  margin-bottom: 16px; /* 恢復原始間距 */
-  border-bottom: 2px solid #3b82f6; /* 中藍底線 */
+  color: #1e3a8a;
+  margin-bottom: 16px;
+  border-bottom: 2px solid #3b82f6;
   padding-bottom: 6px;
 }
-
-/* Section intro (已移除，不再定義樣式) */
 
 /* Layout */
 .content-block {
   display: flex;
   flex-direction: row;
-  gap: 40px; /* 保持間距 */
+  gap: 40px;
   justify-content: space-between;
   align-items: flex-start;
   width: 100%;
@@ -72,34 +70,41 @@ h1 {
 }
 
 .left-text-right-vis {
-  flex-direction: row; /* 文字在左，圖在右 */
+  flex-direction: row;
 }
 
 .annotation {
-  flex: 1 1 35%; /* 保持比例 */
-  min-width: 280px; /* 增加最小寬度 */
+  flex: 1 1 35%;
+  min-width: 280px;
   max-width: 35vw;
   font-size: 15px;
   line-height: 1.7;
   word-break: break-word;
-  color: #374151; /* 深中灰 */
-  margin-right: 30px; /* 增加右側間距 */
+  color: #374151;
+  margin-right: 30px;
 }
 
+/* 第二個 section 的文字居中 */
+.center-align-text {
+  text-align: center;
+  margin: 0 auto;
+}
+
+/* 垂直置中 */
 .center-text {
   display: flex;
   flex-direction: column;
   justify-content: center;
   height: 100%;
-  text-align: center; /* 將文字對齊到中間 */
+  text-align: left;
 }
 
 .vis-block {
-  flex: 1 1 62%; /* 保持比例 */
-  min-width: 600px; /* 增加最小寬度 */
+  flex: 1 1 62%;
+  min-width: 600px;
   max-width: 62vw;
-  min-height: 450px; /* 統一高度 */
-  margin-left: 30px; /* 增加左側間距 */
+  min-height: 450px;
+  margin-left: 30px;
 }
 
 /* Specific chart heights */
@@ -120,6 +125,7 @@ h1 {
   font-weight: bold;
 }
 
+/* Color helpers for metrics */
 .color-annotation span.precip {
   color: #6baed6;
   font-weight: bold;
@@ -140,6 +146,18 @@ h1 {
   font-weight: bold;
 }
 
+/* Link styling */
+a {
+  color: #1e3a8a;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a:hover {
+  color: #3b82f6;
+  text-decoration: underline;
+}
+
 /* Responsive */
 @media screen and (max-width: 1000px) {
   .content-block,
@@ -152,13 +170,13 @@ h1 {
     text-align: center;
     margin-top: 20px;
     max-width: 100%;
-    margin-right: 0; /* 移除右側間距 */
+    margin-right: 0;
   }
 
   .vis-block {
     max-width: 100%;
-    min-width: 0; /* 重置最小寬度 */
-    margin-left: 0; /* 移除左側間距 */
+    min-width: 0;
+    margin-left: 0;
   }
 
   .card {
@@ -174,9 +192,9 @@ h1 {
 .footer {
   text-align: center;
   font-size: 14px;
-  color: #6b7280; /* 中灰 */
+  color: #6b7280;
   margin-top: 60px;
   padding-top: 20px;
-  border-top: 1px solid #e5e7eb; /* 淺灰線 */
+  border-top: 1px solid #e5e7eb;
   line-height: 1.6;
 }
