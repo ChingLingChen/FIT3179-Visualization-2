@@ -2,7 +2,7 @@ body {
   font-family: 'Helvetica', 'Arial', sans-serif;
   margin: 0;
   padding: 40px 0;
-  background: linear-gradient(to bottom, #f0f4ff, #fefefe); /* 淡藍到白漸層 */
+  background: linear-gradient(to bottom, #f0f4ff, #fefefe); 
   color: #1f2937;
 }
 
@@ -41,7 +41,7 @@ h1 {
 /* Card block */
 .card {
   background-color: #ffffff;
-  border-left: 6px solid #3b82f6; /* 左側色條點綴 */
+  border-left: 6px solid #3b82f6; 
   border-radius: 12px;
   padding: 32px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
@@ -91,13 +91,12 @@ h1 {
   margin-right: 30px;
 }
 
-/* 第二個 section 的文字居中 */
+/* Second section*/
 .center-align-text {
   text-align: center;
   margin: 0 auto;
 }
 
-/* 垂直置中 */
 .center-text {
   display: flex;
   flex-direction: column;
